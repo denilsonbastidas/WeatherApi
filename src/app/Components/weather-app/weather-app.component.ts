@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { WeatherServices } from 'src/app/services/weather-service.service';
 
 @Component({
@@ -56,7 +56,7 @@ export class WeatherAppComponent implements OnInit {
       result => {
         this.dataDay = result.consolidated_weather;
         this.weatherDiary(this.dataDay);
-
+        this.loading = false;
         // humedad de barra
         this.progressH = result.consolidated_weather[0].humidity + '%';
       }, error => {

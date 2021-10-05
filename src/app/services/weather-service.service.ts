@@ -12,7 +12,7 @@ export class WeatherServices {
   constructor(
     private _http: HttpClient
   ) {
-    this.url = 'https://www.metaweather.com/api/';
+    this.url = "https://www.metaweather.com/api/";
   }
 
   // solicitud de latitud y longitud 

@@ -1,5 +1,15 @@
-<!--! Agregar cargando... -->
-<div class="container mt-3 mb-3">
+<!--?========== Loading ============0-->
+<div class="spinner" *ngIf="loading">
+  <div class="rect1"></div>
+  <div class="rect2"></div>
+  <div class="rect3"></div>
+  <div class="rect4"></div>
+  <div class="rect5"></div>
+
+  <h6 class="mt-2">Loading...</h6>
+</div>
+
+<div class="container mt-3 mb-3" *ngIf="!loading">
   <div class="row wrap-main">
     <!--===== barra lateral =======-->
     <aside class="col-md-3 text-center">
@@ -31,12 +41,13 @@
     <!--?===== Contenido principal =======-->
     <div class="col-md-9 main">
       <!--? ==== Clima de la semana ======  -->
-      <div class="row cont-diary mt-3 mx-auto justify-content-center aling-items-center">
-        <!-- Caja One -->
+      <div class="row cont-diary mt-2 mx-auto justify-content-center aling-items-center">
+        <!--? ======= BOX ========= -->
+        <div class="d-flex flex-wrap"><small>next 5 days</small></div>
         <div class="col m-2 one text-center" *ngFor="let diary of dataDiary">
-          <h6 class="mt-2 mb-3">{{diary.applicable_date}} </h6>
+          <h6 class="mt-2 mb-2">{{diary.weather_state_name}} </h6>
 
-          <div class="cont-img mx-auto mb-3">
+          <div class="cont-img mx-auto mb-2">
             <img src="https://www.metaweather.com/static/img/weather/{{diary.weather_state_abbr}}.svg">
           </div>
           <!--? ====== Grados ====-->
@@ -48,7 +59,7 @@
       </div>
 
 
-      <div class="todays mb-2 row justify-content-center mt-3 mx-auto">
+      <div class="todays mb-1 row justify-content-center mt-3 mx-auto">
         <div class="text-todays mb-2">
           <h4>Today's Hightlights</h4>
         </div>
