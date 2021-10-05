@@ -1,0 +1,176 @@
+.container {
+  -webkit-animation: show 1s ease;
+          animation: show 1s ease;
+}
+
+@-webkit-keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+aside {
+  background: url("../../../assets/img/Cloud-background.png");
+  position: relative;
+  background-size: 100%;
+  background-position: 0% 13%;
+  min-height: 500px;
+  background-repeat: no-repeat;
+}
+
+aside .cont-card {
+  position: relative;
+}
+
+aside .cont-card .cont-img {
+  width: 50%;
+}
+
+aside .cont-card .cont-img img {
+  width: 100%;
+}
+
+aside .cont-card .text-main .Shower {
+  color: #A09FB1;
+}
+
+aside .cont-card .text-main h3 {
+  font-size: 48px;
+}
+
+aside .cont-card .text-main h4 {
+  font-size: 36px;
+}
+
+aside .cont-card .text-main .cont-fecha {
+  font-size: 16px;
+  color: #A09FB1;
+}
+
+aside .cont-card .text-main .cont-fecha i {
+  font-size: 14px;
+}
+
+aside .cont-card .text-main .cont-fecha .ciudad {
+  color: #A09FB1;
+}
+
+aside::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #1e213ae1;
+}
+
+.main .cont-diary .one {
+  background: #1e213a;
+  padding: 10px;
+  min-height: 160px;
+  border-radius: 3px;
+}
+
+.main {
+  background: #100E1D;
+}
+
+.main .cont-diary {
+  width: 80%;
+}
+
+.main .cont-diary h6 {
+  font-size: 14px;
+  color: #A09FB1;
+}
+
+.main .cont-diary .cont-img {
+  width: 55px;
+}
+
+.main .cont-diary .cont-img img {
+  width: 100%;
+}
+
+.main .cont-diary .grados {
+  font-size: 15px;
+}
+
+.main .cont-diary .grados p:nth-child(2) {
+  color: #A09FB1;
+}
+
+.todays {
+  width: 70%;
+}
+
+.todays .cont-today-one .widget-status,
+.todays .cont-today-one .widget-humidty {
+  background-color: #1e213a;
+  width: 230px;
+  height: 140px;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.todays .cont-today-one .widget-status h6,
+.todays .cont-today-one .widget-humidty h6 {
+  font-weight: normal;
+  color: #A09FB1;
+}
+
+.todays .cont-today-one .widget-status span {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.todays .cont-today-one .widget-humidty h3 {
+  font-size: 35px;
+}
+
+.todays .cont-today-one .widget-humidty .progress {
+  height: 10px;
+}
+
+.todays .cont-today-one .widget-humidty small {
+  font-size: 10px;
+}
+
+.todays .cont-today-dwo .widget-visibility,
+.todays .cont-today-dwo .widget-air {
+  background-color: #1e213a;
+  width: 230px;
+  height: 100px;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.todays .cont-today-dwo .widget-visibility h3,
+.todays .cont-today-dwo .widget-air h3 {
+  font-weight: normal;
+}
+
+.todays .cont-today-dwo .widget-visibility h6,
+.todays .cont-today-dwo .widget-air h6 {
+  color: #A09FB1;
+}
+
+.todays .cont-today-dwo .widget-visibility span,
+.todays .cont-today-dwo .widget-air span {
+  font-size: 35px;
+  font-weight: 700;
+}
+/*# sourceMappingURL=weather-app.component.css.map */

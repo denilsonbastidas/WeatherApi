@@ -1,0 +1,121 @@
+<!--! Agregar cargando... -->
+<div class="container mt-3 mb-3">
+  <div class="row wrap-main">
+    <!--===== barra lateral =======-->
+    <aside class="col-md-3 text-center">
+      <div *ngFor="let data of dataDay;let i = index">
+        <div class="cont-card" *ngIf="i === 0">
+
+          <div class="cont-img m-5 p-1">
+            <img src="https://www.metaweather.com/static/img/weather/{{data.weather_state_abbr}}.svg">
+          </div>
+
+          <div class="text-main">
+            <!--? ====== grados ºC ==========-->
+            <h3 class="mb-4">{{data.the_temp.toFixed()}}ºC</h3>
+
+            <div class="mb-5">
+              <h4 class="Shower">{{data.weather_state_name}}</h4>
+            </div>
+
+            <!--? ===== Fecha - Ciudad ========= -->
+            <div class="cont-fecha d-flex aling-self-end flex-wrap justify-content-center text-muted">
+              <p class="mb-1">Today · {{ fecha | date:'dd MMMM' }}</p>
+              <p class="w-100 m-0 ciudad"><i class="fas fa-map-marker-alt"></i> {{ ciudad }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!--?===== Contenido principal =======-->
+    <div class="col-md-9 main">
+      <!--? ==== Clima de la semana ======  -->
+      <div class="row cont-diary mt-3 mx-auto justify-content-center aling-items-center">
+        <!-- Caja One -->
+        <div class="col m-2 one text-center" *ngFor="let diary of dataDiary">
+          <h6 class="mt-2 mb-3">{{diary.applicable_date}} </h6>
+
+          <div class="cont-img mx-auto mb-3">
+            <img src="https://www.metaweather.com/static/img/weather/{{diary.weather_state_abbr}}.svg">
+          </div>
+          <!--? ====== Grados ====-->
+          <div class="grados d-flex flex-wrap justify-content-center">
+            <p class="m-1">{{diary.the_temp.toFixed()}}ºC</p>
+            <p class="m-1">{{diary.min_temp.toFixed()}}ºC</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="todays mb-2 row justify-content-center mt-3 mx-auto">
+        <div class="text-todays mb-2">
+          <h4>Today's Hightlights</h4>
+        </div>
+        <!--? ======== Todays One ============ -->
+        <div class="cont-today-one justify-content-center" *ngFor="let data of dataDay;let i = index">
+          <div *ngIf="i === 0" class="row">
+            <div class="col m-2 widget-status text-center">
+              <h6 class="mb-2 mt-2">Wind Status</h6>
+
+              <div class="cont-text mb-2">
+                <h3 class="fw-normal"> <span>{{data.wind_speed.toFixed()}}</span> Mph</h3>
+              </div>
+
+              <div class="text-muted">
+                <small> <i class="fas fa-location-arrow mx-1"></i> WSW</small>
+              </div>
+            </div>
+
+            <div class="col m-2 widget-humidty text-center">
+              <h6 class="mb-2 mt-2">Humidity</h6>
+
+              <div class="cont-text">
+                <h3 class="mb-1"> {{data.humidity.toFixed()}}%</h3>
+                <div class="d-flex flex-wrap justify-content-between">
+                  <small>0</small>
+                  <small>50</small>
+                  <small>100</small>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" #progress [ngStyle]="{'background': '#FFEC65',
+                                                                  'width': progressH }"></div>
+                </div>
+                <small class="float-end">%</small>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!--? ============= Todays Dwo ================ -->
+        <div class="cont-today-dwo justify-content-center" *ngFor="let data of dataDay;let i = index">
+
+          <div *ngIf="i === 0" class="row">
+            <div class="col m-2 widget-visibility text-center">
+              <h6 class="mb-1 mt-1  fw-normal">Visibility</h6>
+            
+              <div class="cont-text">
+                <h3><span>{{data.visibility.toFixed(1)}}</span> miles</h3>
+              </div>
+            
+            </div>
+            <div class="col m-2 widget-air text-center">
+              <h6 class="mb-1 mt-1 fw-normal">Air Pressure</h6>
+            
+              <div class="cont-text">
+                <h3><span>{{data.air_pressure.toFixed()}}</span> mb</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--?=============== Footer ========== -->
+      <footer class="text-center">
+        <small class="text-muted">Denilson Bastidas &copy;</small>
+      </footer>
+    </div>
+
+  </div>
+</div>

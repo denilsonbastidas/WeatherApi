@@ -1,0 +1,191 @@
+$color-claroAzul: #1e213a;
+$color-oscuroAzul:#100E1D;
+$color-gray: #A09FB1;
+
+.container {
+  animation: show 1s ease;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+//? section Asdie ==========>
+aside {
+  background: url("../../../assets/img/Cloud-background.png");
+  position: relative;
+  background-size: 100%;
+  background-position: 0% 13%;
+  min-height: 500px;
+  background-repeat: no-repeat;
+
+  .cont-card {
+    position: relative;
+
+    .cont-img {
+      width: 50%;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .text-main {
+      .Shower {
+        color: $color-gray;
+      }
+
+      h3 {
+        font-size: 48px;
+      }
+
+      h4 {
+        font-size: 36px;
+      }
+
+      .cont-fecha {
+        font-size: 16px;
+        color: $color-gray;
+        i{
+          font-size: 14px;
+        }
+
+        .ciudad {
+          color: $color-gray;
+        }
+
+      }
+    }
+  }
+}
+
+aside::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #1e213ae1;
+}
+
+//? section main =========>
+%card-diary {
+  background: $color-claroAzul;
+  padding: 10px;
+  min-height: 160px;
+  border-radius: 3px;
+}
+
+.main {
+  background: $color-oscuroAzul;
+
+  .cont-diary {
+    width: 80%;
+
+    h6 {
+      font-size: 14px;
+      color: $color-gray;
+    }
+
+    .one {
+      @extend %card-diary;
+    }
+
+    .cont-img {
+      width: 55px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .grados {
+      font-size: 15px;
+
+      p:nth-child(2) {
+        color: $color-gray;
+      }
+    }
+  }
+
+}
+
+//? todays =======>
+@mixin widgets($heigth) {
+  background-color: $color-claroAzul;
+  width: 230px;
+  height: $heigth;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.todays {
+  width: 70%;
+
+  .cont-today-one {
+
+    .widget-status,
+    .widget-humidty {
+      @include widgets(140px);
+    }
+
+    .widget-status,
+    .widget-humidty {
+      h6 {
+        font-weight: normal;
+        color: $color-gray;
+      }
+    }
+
+    .widget-status span {
+      font-size: 40px;
+      font-weight: 700;
+    }
+
+    .widget-humidty {
+      h3 {
+        font-size: 35px
+      }
+
+      .progress {
+        height: 10px;
+      }
+
+      small {
+        font-size: 10px;
+      }
+    }
+  }
+
+  .cont-today-dwo {
+
+    .widget-visibility,
+    .widget-air {
+      @include widgets(100px);
+    }
+
+    .widget-visibility,
+    .widget-air {
+      h3 {
+        font-weight: normal;
+      }
+
+      h6 {
+        color: $color-gray;
+      }
+
+      span {
+        font-size: 35px;
+        font-weight: 700;
+      }
+    }
+  }
+}
