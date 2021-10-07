@@ -12,7 +12,7 @@ export class WeatherServices {
   constructor(
     private _http: HttpClient
   ) {
-    this.url = "https://www.metaweather.com/api/";
+    this.url = "https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/";
   }
 
   // solicitud de latitud y longitud 
@@ -22,6 +22,6 @@ export class WeatherServices {
   
   // get de localicacion
   getLocation(id: any): Observable<any> {
-    return this._http.get(`https://www.metaweather.com/api/location/${id}`);
+    return this._http.get(`${this.url}/location/${id}`);
   }
 }
