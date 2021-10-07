@@ -201,7 +201,7 @@ aside::before {
 @mixin widgets($heigth) {
   background-color: $color-claroAzul;
   width: 230px;
-  height: $heigth;
+  min-height: $heigth;
   padding: 12px;
   border-radius: 4px;
 }
@@ -268,3 +268,21 @@ aside::before {
     }
   }
 }
+// Responsive =========
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) { 
+  .todays{
+    width: 100% !important;
+
+    .widget-status,
+    .widget-humidty {
+      width: 100% !important;
+    }
+  }
+  .widget-visibility,
+  .widget-air {
+    width: 100% !important;
+  }
+  
+ }
