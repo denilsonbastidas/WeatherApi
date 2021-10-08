@@ -7,6 +7,7 @@
   <div class="rect5"></div>
 
   <h6 class="mt-2">Loading...</h6>
+  <h6 class="mt-1 text-warning" *ngIf="!lat && !long">Activa tu ubicación y Recargar <i class="text-muted fas fa-map-marker-alt"></i> </h6>
 </div>
 
 <div class="container mt-3 mb-4" *ngIf="!loading">
